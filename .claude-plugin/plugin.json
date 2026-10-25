@@ -1,0 +1,68 @@
+{
+  "name": "tweaks",
+  "version": "0.1.0",
+  "description": "Small tweaks to the Claude Code terminal, each one switched on or off in /config: the time on your messages, a frame around them, and when you last wrote",
+  "author": {
+    "name": "Bloomidea",
+    "url": "https://bloomidea.com"
+  },
+  "homepage": "https://github.com/Bloomidea/claude-code-tweaks",
+  "repository": "https://github.com/Bloomidea/claude-code-tweaks",
+  "license": "MIT",
+  "keywords": ["claude-code", "tweaks", "timestamps", "terminal"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "messageTime": {
+      "type": "boolean",
+      "title": "Time on your messages",
+      "description": "Show the date and time each of your messages was sent, on the right of the message",
+      "default": true
+    },
+    "dateFormat": {
+      "type": "string",
+      "title": "Date format",
+      "description": "How the date is written, on your messages and in the last message line",
+      "options": ["Sun 25/10", "25/10", "Sun 10/25", "10/25", "2026-10-25"],
+      "default": "Sun 25/10"
+    },
+    "todayDate": {
+      "type": "boolean",
+      "title": "Date on today's messages",
+      "description": "Show the date on messages sent today too; off, they show the time alone",
+      "default": true
+    },
+    "clock": {
+      "type": "string",
+      "title": "Clock",
+      "description": "24-hour (14:05) or 12-hour (2:05 pm) time",
+      "options": ["24h", "12h"],
+      "default": "24h"
+    },
+    "messageFrame": {
+      "type": "boolean",
+      "title": "Frame around your messages",
+      "description": "Draw a frame around each of your messages so they stand out from Claude's replies",
+      "default": true
+    },
+    "frameStyle": {
+      "type": "string",
+      "title": "Frame style",
+      "description": "The frame's border; quote draws a bar on the left alone",
+      "options": ["round", "single", "bold", "double", "dashed", "quote"],
+      "default": "round"
+    },
+    "frameColor": {
+      "type": "string",
+      "title": "Frame color",
+      "description": "A color of your theme, so the frame follows the light or dark theme you use",
+      "options": ["suggestion", "permission", "claude", "promptBorder", "subtle", "success", "warning", "planMode", "autoAccept", "ide"],
+      "default": "suggestion"
+    },
+    "lastMessage": {
+      "type": "boolean",
+      "title": "Last message line",
+      "description": "Show under the prompt when you last sent a message in this session and how long ago",
+      "default": true
+    }
+  }
+}
