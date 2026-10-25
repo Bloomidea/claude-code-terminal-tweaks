@@ -1,10 +1,10 @@
 <div align="center">
 
-# claude-code-tweaks
+# Terminal Tweaks
 
 **Small tweaks to the Claude Code terminal, each one a switch in `/config`.**
 
-[![Tests](https://github.com/Bloomidea/claude-code-tweaks/actions/workflows/test.yml/badge.svg)](https://github.com/Bloomidea/claude-code-tweaks/actions/workflows/test.yml)
+[![Tests](https://github.com/Bloomidea/claude-code-terminal-tweaks/actions/workflows/test.yml/badge.svg)](https://github.com/Bloomidea/claude-code-terminal-tweaks/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Claude Code 2.1.310+](https://img.shields.io/badge/claude%20code-2.1.310+-d97757.svg)](https://github.com/anthropics/claude-code)
 
@@ -28,7 +28,7 @@ This plugin adds them as tweaks you can switch on and off. A tweak switched off 
 At the prompt of a Claude Code session in a terminal:
 
 ```
-/plugin install tweaks --marketplace Bloomidea/claude-code-tweaks
+/plugin install terminal-tweaks --marketplace Bloomidea/claude-code-terminal-tweaks
 ```
 
 Answer `y` to add the marketplace and pick the user scope, so every session has it. The plugin is active in that session at once.
@@ -36,7 +36,7 @@ Answer `y` to add the marketplace and pick the user scope, so every session has 
 From a shell:
 
 ```bash
-claude plugin install tweaks --marketplace Bloomidea/claude-code-tweaks
+claude plugin install terminal-tweaks --marketplace Bloomidea/claude-code-terminal-tweaks
 ```
 
 ## The tweaks
@@ -96,11 +96,11 @@ In the desktop app, the VS Code extension and the mobile app the plugin draws no
 
 **Does it change what Claude reads?** No. It changes how the terminal draws your messages and the hint line; the transcript and the conversation Claude sees stay as they were.
 
-**How do I switch it off?** Each tweak has its switch in `/config`. To switch the whole plugin off, `claude plugin disable tweaks@claude-code-tweaks`; to remove it, `claude plugin uninstall tweaks@claude-code-tweaks`.
+**How do I switch it off?** Each tweak has its switch in `/config`. To switch the whole plugin off, `claude plugin disable terminal-tweaks@claude-code-terminal-tweaks`; to remove it, `claude plugin uninstall terminal-tweaks@claude-code-terminal-tweaks`.
 
 ## Contributing
 
-Ideas and bug reports are welcome as [issues](https://github.com/Bloomidea/claude-code-tweaks/issues). New tweaks come from popular requests on [anthropics/claude-code](https://github.com/anthropics/claude-code/issues) that a plugin can answer without changing Claude Code; when Claude Code gains one of them natively, its tweak turns off by default.
+Ideas and bug reports are welcome as [issues](https://github.com/Bloomidea/claude-code-terminal-tweaks/issues). New tweaks come from popular requests on [anthropics/claude-code](https://github.com/anthropics/claude-code/issues) that a plugin can answer without changing Claude Code; when Claude Code gains one of them natively, its tweak turns off by default.
 
 Each tweak is a module in `hooks/`, registered from `hooks/register.tsx` only while its switch is on, with its fields under `userConfig` in `.claude-plugin/plugin.json`, its tests in `tests/`, a section in this README and a line in the [CHANGELOG](CHANGELOG.md).
 

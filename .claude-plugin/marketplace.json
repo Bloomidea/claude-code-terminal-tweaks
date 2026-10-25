@@ -1,5 +1,5 @@
 {
-  "name": "claude-code-tweaks",
+  "name": "claude-code-terminal-tweaks",
   "description": "Bloomidea's tweaks to the Claude Code terminal",
   "owner": {
     "name": "Bloomidea",
@@ -7,7 +7,7 @@
   },
   "plugins": [
     {
-      "name": "tweaks",
+      "name": "terminal-tweaks",
       "source": "./",
       "description": "Small tweaks to the Claude Code terminal, each one switched on or off in /config: the time on your messages, a frame around them, and when you last wrote"
     }

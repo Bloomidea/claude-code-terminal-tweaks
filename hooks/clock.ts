@@ -8,8 +8,8 @@ const MINUTE_MS = 60_000
 // Written on each new minute and each new day, so what reads them is drawn
 // again: the last message line every minute, the stamps without today's date
 // at midnight.
-const minute = atom({ plugin: 'tweaks', key: 'minute' } as const, 0)
-const today = atom({ plugin: 'tweaks', key: 'today' } as const, '')
+const minute = atom({ plugin: 'terminal-tweaks', key: 'minute' } as const, 0)
+const today = atom({ plugin: 'terminal-tweaks', key: 'today' } as const, '')
 
 async function tick($: EngineInterface): Promise<void> {
   const now = await $.clock.now()

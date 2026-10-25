@@ -8,8 +8,8 @@ import type { Sent } from './transcript'
 // the time on a message and the last message line both draw from. The
 // transcript is the one source, so a live session and a resumed one show the
 // same time.
-const sent = atom({ plugin: 'tweaks', key: 'sent' } as const, 0)
-const lastSent = atom({ plugin: 'tweaks', key: 'lastSent' } as const, 0)
+const sent = atom({ plugin: 'terminal-tweaks', key: 'sent' } as const, 0)
+const lastSent = atom({ plugin: 'terminal-tweaks', key: 'lastSent' } as const, 0)
 
 // The id the engine draws a prompt under in the moment before it is recorded;
 // the next row drawn under an id of its own is that prompt.

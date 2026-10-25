@@ -4,7 +4,7 @@ export type EpochMs = number
 // The values the tweaks keep in the session's state, read while drawing.
 declare module 'claude-code' {
   interface PluginState {
-    tweaks: {
+    'terminal-tweaks': {
       // When each of the person's messages was sent, by the id its row is
       // drawn under (the row's uuid in the transcript); 0 while not known.
       sent: StateFamily<EpochMs>

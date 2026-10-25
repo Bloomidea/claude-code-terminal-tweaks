@@ -6,8 +6,8 @@ import type { Settings } from './settings'
 
 // Written by sent-times.ts and clock.ts; the state library reads an atom only
 // in the file that names it.
-const lastSent = atom({ plugin: 'tweaks', key: 'lastSent' } as const, 0)
-const minute = atom({ plugin: 'tweaks', key: 'minute' } as const, 0)
+const lastSent = atom({ plugin: 'terminal-tweaks', key: 'lastSent' } as const, 0)
+const minute = atom({ plugin: 'terminal-tweaks', key: 'minute' } as const, 0)
 
 export function registerLastMessage(on: On, settings: Settings): void {
   // The dim hint line under the prompt: the line goes at its end, dim as the

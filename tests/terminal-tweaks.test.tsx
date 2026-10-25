@@ -6,7 +6,7 @@ import { ago, formatTime, lastMessageLine, stamp } from '../hooks/format'
 import { DEFAULTS } from '../hooks/settings'
 import { parseSent, projectFolder } from '../hooks/transcript'
 
-const PLUGIN = 'tweaks'
+const PLUGIN = 'terminal-tweaks'
 const SESSION = '0d4c3e9a-5b1f-4e2a-9c7d-2f6e8a1b3c5d'
 const HOME = '/Users/ana'
 const CWD = '/Users/ana/Dev/shop'

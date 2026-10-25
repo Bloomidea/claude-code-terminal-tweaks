@@ -1,13 +1,14 @@
 {
-  "name": "tweaks",
+  "name": "terminal-tweaks",
+  "displayName": "Terminal Tweaks",
   "version": "0.1.0",
   "description": "Small tweaks to the Claude Code terminal, each one switched on or off in /config: the time on your messages, a frame around them, and when you last wrote",
   "author": {
     "name": "Bloomidea",
     "url": "https://bloomidea.com"
   },
-  "homepage": "https://github.com/Bloomidea/claude-code-tweaks",
-  "repository": "https://github.com/Bloomidea/claude-code-tweaks",
+  "homepage": "https://github.com/Bloomidea/claude-code-terminal-tweaks",
+  "repository": "https://github.com/Bloomidea/claude-code-terminal-tweaks",
   "license": "MIT",
   "keywords": ["claude-code", "tweaks", "timestamps", "terminal"],
   "types": "./types/index.d.ts",

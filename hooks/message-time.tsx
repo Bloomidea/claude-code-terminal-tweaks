@@ -6,7 +6,7 @@ import { isPersons, sentAt } from './sent-times'
 import type { Settings } from './settings'
 
 // Written by clock.ts when the day changes.
-const today = atom({ plugin: 'tweaks', key: 'today' } as const, '')
+const today = atom({ plugin: 'terminal-tweaks', key: 'today' } as const, '')
 
 export function registerMessageTime(on: On, settings: Settings): void {
   on('ui.render', { component: 'UserMessage' }, async ($, e, next) => {
