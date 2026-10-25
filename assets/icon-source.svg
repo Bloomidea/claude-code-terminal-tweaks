@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#262a33"/>
+      <stop offset="1" stop-color="#181a20"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  <!-- the framed message -->
+  <rect x="140" y="292" width="744" height="440" rx="72" fill="none" stroke="#b1b9f9" stroke-width="40"/>
+  <!-- the time, top right inside the frame -->
+  <circle cx="742" cy="420" r="66" fill="none" stroke="#9aa0ab" stroke-width="22"/>
+  <path d="M742 380 V420 L770 438" fill="none" stroke="#9aa0ab" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- the prompt chevron and a line of text -->
+  <path d="M238 548 L294 596 L238 644" fill="none" stroke="#9aa0ab" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="352" y="576" width="420" height="40" rx="20" fill="#e6e8ee"/>
+</svg>
