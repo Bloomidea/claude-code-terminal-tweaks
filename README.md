@@ -10,10 +10,7 @@
 
 [Quick Start](#quick-start) &#183; [The tweaks](#the-tweaks) &#183; [Configuration](#configuration) &#183; [How it works](#how-it-works) &#183; [FAQ](#faq)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/screenshot-dark.png">
-  <img src="assets/screenshot-light.png" alt="Two of your messages framed in color, each with its date and time on the right, and 'last message 09:41 · 4h ago' under the prompt" width="720">
-</picture>
+![Two of your messages framed in color, each with its date and time on the right, and 'last message 09:41 · 4h ago' under the prompt](assets/screenshot-dark.png)
 
 </div>
 
