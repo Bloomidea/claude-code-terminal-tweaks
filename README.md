@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Claude Code 2.1.310+](https://img.shields.io/badge/claude%20code-2.1.310+-d97757.svg)](https://github.com/anthropics/claude-code)
 
-[Quick Start](#quick-start) &#183; [The tweaks](#the-tweaks) &#183; [Configuration](#configuration) &#183; [How it works](#how-it-works) &#183; [FAQ](#faq)
+[Quick Start](#quick-start) &#183; [The tweaks](#the-tweaks) &#183; [Configuration](#configuration) &#183; [How it works](#how-it-works) &#183; [Privacy](#privacy) &#183; [FAQ](#faq)
 
 ![Two of your messages framed in color, each with its date and time on the right, and 'last message 09:41 · 4h ago' under the prompt](assets/screenshot-dark.png)
 
@@ -77,9 +77,11 @@ Claude Code records every message in the session's transcript, `~/.claude/projec
 
 The tweaks are hooks of Claude Code's plugin API on two of the things the terminal draws: each message of yours (`UserMessage`) and the hint line under the prompt (`PromptHint`).
 
-### What it reads, runs and sends
+## Privacy
 
-- **Reads** the current session's transcript, `<session>.jsonl`. To find it, the plugin reads the environment variables `CLAUDE_CONFIG_DIR`, `HOME` and `USERPROFILE`, and lists the folders under `~/.claude/projects` when the transcript is not in the folder of the directory the session runs in.
+Terminal Tweaks collects no data. It sends nothing to Bloomidea or to anyone else, and what it reads never leaves your machine.
+
+- **Reads** the current session's transcript, `<session>.jsonl`, which holds your messages. Of each message the plugin keeps the time it was sent and its id, never its text. To find the transcript, the plugin reads the environment variables `CLAUDE_CONFIG_DIR`, `HOME` and `USERPROFILE`, and lists the folders under `~/.claude/projects` when the transcript is not in the folder of the directory the session runs in.
 - **Runs** one program, `grep -F -e '"origin":{"kind":"' <transcript>`, and only when the transcript is larger than 4 MiB, the most the plugin API reads in one call. grep keeps the rows of the file that are prompts, which the plugin then parses for their times. Its output goes back to the plugin and nowhere else.
 - **Sends** nothing. The plugin makes no network request and writes no file. The times it finds stay in the session's memory and are gone when the session ends.
 
