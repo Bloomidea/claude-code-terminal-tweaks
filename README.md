@@ -75,7 +75,13 @@ The frame colors are names from your Claude Code theme, so the frame follows `/t
 
 Claude Code records every message in the session's transcript, `~/.claude/projects/<project>/<session>.jsonl` (under `CLAUDE_CONFIG_DIR` when you set it), with the time it was recorded. When a message of yours is drawn and the plugin does not know its time yet, it reads the prompt rows of that file. A new message shows the time it is drawn straight away, and the transcript's time a moment later; the two are milliseconds apart. A transcript larger than 4 MiB goes through `grep` first, so a large file is never read whole.
 
-The tweaks are hooks of Claude Code's plugin API on two of the things the terminal draws: each message of yours (`UserMessage`) and the hint line under the prompt (`PromptHint`). The plugin reads files and runs `grep`. It writes no file and makes no network request.
+The tweaks are hooks of Claude Code's plugin API on two of the things the terminal draws: each message of yours (`UserMessage`) and the hint line under the prompt (`PromptHint`).
+
+### What it reads, runs and sends
+
+- **Reads** the current session's transcript, `<session>.jsonl`. To find it, the plugin reads the environment variables `CLAUDE_CONFIG_DIR`, `HOME` and `USERPROFILE`, and lists the folders under `~/.claude/projects` when the transcript is not in the folder of the directory the session runs in.
+- **Runs** one program, `grep -F -e '"origin":{"kind":"' <transcript>`, and only when the transcript is larger than 4 MiB, the most the plugin API reads in one call. grep keeps the rows of the file that are prompts, which the plugin then parses for their times. Its output goes back to the plugin and nowhere else.
+- **Sends** nothing. The plugin makes no network request and writes no file. The times it finds stay in the session's memory and are gone when the session ends.
 
 ## Requirements
 
@@ -99,7 +105,7 @@ In the desktop app, the VS Code extension and the mobile app the plugin draws no
 
 Ideas and bug reports are welcome as [issues](https://github.com/Bloomidea/claude-code-terminal-tweaks/issues). New tweaks come from popular requests on [anthropics/claude-code](https://github.com/anthropics/claude-code/issues) that a plugin can answer without changing Claude Code; when Claude Code gains one of them natively, its tweak turns off by default.
 
-Each tweak is a module in `hooks/`, registered from `hooks/register.tsx` only while its switch is on, with its fields under `userConfig` in `.claude-plugin/plugin.json`, its tests in `tests/`, a section in this README and a line in the [CHANGELOG](CHANGELOG.md).
+Each tweak is a `register…` function in `hooks/register.tsx`, called only while its switch is on, with its fields under `userConfig` in `.claude-plugin/plugin.json`, its tests in `tests/`, a section in this README and a line in the [CHANGELOG](CHANGELOG.md). Every call to the engine (`$`) stays in `hooks/register.tsx`: the plugin directory checks a plugin's calls from its source and does not follow `$` into other files. Formatting and parsing go in plain modules beside it, such as `hooks/format.ts` and `hooks/transcript.ts`.
 
 ```bash
 claude plugin validate .
