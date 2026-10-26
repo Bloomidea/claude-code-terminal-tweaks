@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.1] - 2026-10-26
+
+Tested with Claude Code 2.1.310.
+
+### Changed
+
+- Every call to the Claude Code engine now lives in `hooks/register.tsx`, where the plugin directory reads them. What the plugin shows and does is unchanged.
+- `plugin.json` names the support, documentation and privacy policy links, and the README says in a Privacy section what the plugin reads, which program it runs and that it sends nothing.
+
 ## [0.1.0] - 2026-10-25
 
 Tested with Claude Code 2.1.310.

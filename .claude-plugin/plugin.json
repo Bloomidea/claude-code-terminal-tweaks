@@ -1,7 +1,7 @@
 {
   "name": "terminal-tweaks",
   "displayName": "Terminal Tweaks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Small tweaks to the Claude Code terminal, each one switched on or off in /config: the time on your messages, a frame around them, and when you last wrote",
   "author": {
     "name": "Bloomidea",
