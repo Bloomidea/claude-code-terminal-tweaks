@@ -36,6 +36,8 @@ From a shell:
 claude plugin install terminal-tweaks --marketplace Bloomidea/claude-code-terminal-tweaks
 ```
 
+Claude Code leaves auto-update off for marketplaces like this one, so the plugin stays on the release you installed. To get new releases as they come out, run `/plugin`, open the **Marketplaces** tab, select `claude-code-terminal-tweaks` and choose **Enable auto-update**. To update by hand instead, `claude plugin update terminal-tweaks@claude-code-terminal-tweaks`. Either way, an update applies from the next session.
+
 ## The tweaks
 
 All three are on by default.
